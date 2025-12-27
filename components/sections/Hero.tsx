@@ -5,51 +5,51 @@ import { ArrowRight, ChevronLeft, ChevronRight, Cpu, Activity, Info, BarChart3, 
 const ROBOTS = [
   {
     name: 'GreetingBot Mini',
-    tag: 'Recepción y Guía Inteligente',
-    desc: 'El robot más ágil para espacios dinámicos. Su pantalla de 14" y su radio de giro cero lo hacen perfecto para retail y clínicas de alta rotación.',
-    specs: { pantalla: '14" FHD', giro: '0.0m', sensores: 'Lidar + VSLAM' },
+    tag: 'Recepción Compacta & Guía',
+    desc: 'El anfitrión perfecto para espacios reducidos. Pantalla HD de 14" y navegación ágil para bienvenida y guiado en clínicas, retail y oficinas.',
+    specs: { pantalla: '14" FHD', cpu: 'Qualcomm', voz: '2-Way AI' },
     techDetails: {
-      pantalla: 'Panel táctil industrial IPS de alta definición. Ángulo de visión de 178º optimizado para niños y adultos.',
-      giro: 'Radio de giro cero absoluto. Capacidad de maniobra en pasillos estrechos de hasta 55cm.',
-      sensores: 'Fusión de Lidar de 25m y cámaras estéreo 3D para una navegación segura en entornos con personas.'
+      pantalla: 'Panel táctil 1080p de 14 pulgadas. Interfaz optimizada para interacción rápida y visualización de catálogos.',
+      cpu: 'Procesador Qualcomm Snapdragon de 8 núcleos para procesamiento de IA en el borde (Edge AI) sin latencia.',
+      voz: 'Sistema de diálogo bidireccional con cancelación de eco y reconocimiento de voz natural en entornos ruidosos.'
     },
-    img: 'https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=1200' 
+    img: '/images/greetingbot-mini.png' 
   },
   {
     name: 'GreetingBot Max',
-    tag: 'Marketing y Bienvenida Premium',
-    desc: 'Atrae y fideliza con una pantalla de 27" 4K. El anfitrión definitivo para hoteles, eventos corporativos y centros de exposiciones.',
-    specs: { pantalla: '27" 4K', voz: '6-Mic Array', marketing: 'Digital CMS' },
+    tag: 'Marketing & Asistente Premium',
+    desc: 'Impacto visual garantizado. Su pantalla 4K de 27" convierte la interacción en una experiencia inmersiva para hoteles y showrooms corporativos.',
+    specs: { pantalla: '27" 4K', mic: '6-Array Mic', sensor: 'Lidar + RGBD' },
     techDetails: {
-      pantalla: 'Pantalla publicitaria de gran formato con gestión remota de contenidos vía nube (OrionStar CMS).',
-      voz: 'Matriz de 6 micrófonos con cancelación de ruido activa para reconocimiento de voz a 5 metros.',
-      marketing: 'Recopilación de datos analíticos: tiempo de interacción, demografía básica y mapas de calor.'
+      pantalla: 'Display 4K ultra-brillante para señalización digital y publicidad dinámica. Gestión de contenido remota en tiempo real.',
+      mic: 'Matriz circular de 6 micrófonos capaz de localizar la fuente de sonido en 360 grados y filtrar ruido ambiental.',
+      sensor: 'Navegación híbrida visual y láser (VSLAM) para un posicionamiento preciso en grandes vestíbulos y pasillos.'
     },
-    img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=1200'
+    img: '/images/greetingbot-max.png'
   },
   {
-    name: 'DeliveryBot Pro',
-    tag: 'Logística de Interior Segura',
-    desc: 'Compartimentos cerrados con acceso por código PIN. Garantiza entregas privadas y seguras en oficinas, hoteles y hospitales.',
-    specs: { cabina: '3 Bandejas', carga: '35kg', seguridad: 'PIN/QR' },
+    name: 'Delivery X1',
+    tag: 'Logística Segura & Privada',
+    desc: 'Entrega autónoma con privacidad total. Compartimentos cerrados de 50L y cierre magnético, ideal para hoteles VIP y transporte de documentos.',
+    specs: { carga: '30kg Max', seguridad: 'Auto-Door', bateria: '10h+ Ops' },
     techDetails: {
-      cabina: 'Estructura modular con apertura automática. Desinfección interna opcional por luz UV-C.',
-      carga: 'Sensores de peso integrados que notifican al receptor la llegada exacta del paquete.',
-      seguridad: 'Cierre electromecánico de seguridad y cámara de vigilancia frontal integrada.'
+      carga: 'Capacidad de 30kg distribuida en compartimentos estancos. Sensores de presencia que evitan el cierre accidental.',
+      seguridad: 'Sistema de bloqueo inteligente. Apertura mediante código PIN, escaneo QR o reconocimiento facial.',
+      bateria: 'Batería de polímero de litio de alta densidad con retorno automático a base de carga (Auto-Docking).'
     },
-    img: 'https://images.unsplash.com/photo-1558444479-c8a51c97f262?auto=format&fit=crop&q=80&w=1200'
+    img: '/images/delivery-x1.png'
   },
   {
     name: 'Lucki Pro',
-    tag: 'Servicio Gastronómico Avanzado',
-    desc: 'La referencia mundial en hostelería. Suspensión activa de barra de torsión y detección de obstáculos bajos de 360°.',
-    specs: { carga: '40kg', suspension: 'Activa 3D', vision: '3D ToF' },
+    tag: 'Delivery Master AI',
+    desc: 'El estándar de oro en hostelería. Suspensión independiente y percepción 360° para un servicio de mesas fluido y sin derrames.',
+    specs: { bandejas: '4 Capas', vision: '3 x RGBD', suspension: 'Torsión Indep.' },
     techDetails: {
-      carga: '4 bandejas ajustables con sensores de inducción que detectan cuando se retira el plato.',
-      suspension: 'Sistema de amortiguación inteligente que permite el transporte de líquidos sin derrames a 1.2m/s.',
-      vision: 'Algoritmo de evitación de obstáculos 3D VSLAM que detecta incluso pies y mascotas en movimiento.'
+      bandejas: '4 bandejas ajustables de gran superficie (50x40cm) con capacidad de carga total de 60kg. Detección de recogida por IR.',
+      vision: 'Triple cámara de profundidad RGBD + Lidar para una evasión de obstáculos superior, detectando objetos de hasta 2cm.',
+      suspension: 'Sistema de suspensión por barra de torsión de grado automotriz. Estabilidad garantizada en suelos irregulares y alfombras.'
     },
-    img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200'
+    img: '/images/lucki-pro.png'
   }
 ];
 
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
               {ROBOTS[current].desc}
             </p>
 
-            {/* SPECS & CONTROLS - REFINED SPACING */}
+            {/* SPECS & CONTROLS */}
             <div className="p-6 md:p-8 bg-[#121b28] border border-[#1e2d3d] shadow-2xl relative">
               <div className="grid grid-cols-3 gap-6 mb-8">
                  {Object.entries(ROBOTS[current].specs).map(([key, val]) => (
@@ -134,41 +134,39 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* VISUAL PANEL - NO CLIPPING */}
-          <div className="relative group">
-             <div className="absolute -inset-20 bg-[#ff5f00]/5 blur-[120px] rounded-full opacity-50"></div>
-             <div className={`relative bg-[#0d151f] p-4 transition-all duration-700 ${fade ? 'opacity-100 scale-100' : 'opacity-0 scale-95'} border border-[#1e2d3d]`}>
-                <div className="aspect-square lg:aspect-[4/5] overflow-hidden relative">
+          {/* VISUAL PANEL - CLEAN RENDER (NO GRAYSCALE) */}
+          <div className="relative group perspective-[1000px]">
+             <div className="absolute -inset-20 bg-[#ff5f00]/5 blur-[120px] rounded-full opacity-30"></div>
+             <div className={`relative transition-all duration-700 ${fade ? 'opacity-100 rotate-y-0 scale-100' : 'opacity-0 rotate-y-12 scale-95'}`}>
+                {/* Robot Image Container - Optimized for PNG Cutouts */}
+                <div className="aspect-square lg:aspect-[4/5] relative flex items-center justify-center">
                    <img 
                      src={ROBOTS[current].img} 
                      alt={ROBOTS[current].name} 
-                     className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-1000"
+                     className="max-h-[110%] w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-10 hover:scale-105 transition-transform duration-500"
                    />
                    
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                   {/* Background Glow Effect behind robot */}
+                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-gradient-to-b from-white/5 to-transparent blur-3xl rounded-full -z-10"></div>
                    
-                   <div className="absolute top-6 left-6">
+                   <div className="absolute top-0 right-0">
                       <div className="bg-[#ff5f00] text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(255,95,0,0.4)]">
-                        OS_UNIT_READY
+                        ORIONSTAR_OFFICIAL
                       </div>
                    </div>
 
-                   <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                   <div className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-6">
                       <div className="space-y-1">
-                         <p className="text-[10px] font-mono text-green-400 flex items-center gap-2">
-                           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                           LINK_ACTIVE_0{current}
+                         <p className="text-[10px] font-mono text-cyan-400 flex items-center gap-2">
+                           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                           AI_CORE_ONLINE
                          </p>
-                         <p className="text-white font-black text-xl uppercase tracking-tighter">ORION OS v5.2</p>
                       </div>
-                      <div className="p-3 bg-white/5 backdrop-blur-md border border-white/10 text-white/40 group-hover:text-[#ff5f00] transition-colors">
+                      <div className="p-3 bg-white/5 backdrop-blur-md border border-white/10 text-white/40 group-hover:text-[#ff5f00] transition-colors rounded-full">
                          <Cpu size={24} />
                       </div>
                    </div>
                 </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-1 -right-1 w-8 h-8 border-t border-r border-[#ff5f00]/50 pointer-events-none"></div>
-                <div className="absolute -bottom-1 -left-1 w-8 h-8 border-b border-l border-[#ff5f00]/50 pointer-events-none"></div>
              </div>
           </div>
           

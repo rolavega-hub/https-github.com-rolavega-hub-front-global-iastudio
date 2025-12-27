@@ -3,14 +3,14 @@ import React from 'react';
 import { ChevronRight, Maximize, Cpu } from 'lucide-react';
 
 const ROBOT_MODELS = [
-  { id: '01', name: 'GreetingBot Mini', type: 'Asistente Compacto', img: 'https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=600', specs: ['14" FHD', 'Giro 0m', 'Voice NLP'] },
-  { id: '02', name: 'GreetingBot', type: 'Recepción y Guía', img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=600', specs: ['27" 4K', 'IA OpenAI', 'Marketing'] },
-  { id: '03', name: 'DeliveryBot', type: 'Entrega Segura', img: 'https://images.unsplash.com/photo-1558444479-c8a51c97f262?auto=format&fit=crop&q=80&w=600', specs: ['Cabina PIN', 'Hotel/Hosp.', '35kg Carga'] },
-  { id: '04', name: 'Lucki Pro', type: 'Entrega Premium', img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=600', specs: ['Suspension 3D', '3D VSLAM', '40kg Carga'] },
-  { id: '05', name: 'Lucki', type: 'Delivery Estándar', img: 'https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?auto=format&fit=crop&q=80&w=600', specs: ['4 Bandejas', '15h Batería', '1.2m/s'] },
-  { id: '06', name: 'DeliveryBot Pro', type: 'Logística Pesada', img: 'https://images.unsplash.com/photo-1495055154266-57bbdeada43e?auto=format&fit=crop&q=80&w=600', specs: ['Grado Industrial', '60kg Carga', 'AWD System'] },
-  { id: '07', name: 'Dr. Robot', type: 'Desinfección', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600', specs: ['UV-C Lamps', '99.9% Eficacia', 'Atomizador'] },
-  { id: '08', name: 'Coffee Master', type: 'Barista Biónico', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600', specs: ['6-Axis Arm', '0.1mm Prec.', '24/7 Ops'] }
+  { id: '01', name: 'GreetingBot Mini', type: 'Asistente Compacto', img: '/images/greetingbot-mini.png', specs: ['14" FHD', 'Giro 0m', '10h Batería'] },
+  { id: '02', name: 'GreetingBot Max', type: 'Recepción y Guía AI', img: '/images/greetingbot-max.png', specs: ['27" 4K', 'IA OpenAI', '30 Idiomas'] },
+  { id: '03', name: 'Delivery X1', type: 'Entrega Segura', img: '/images/delivery-x1.png', specs: ['Cierre IP54', 'Hotel VIP', '30kg Carga'] },
+  { id: '04', name: 'Lucki Pro', type: 'Entrega Premium', img: '/images/lucki-pro.png', specs: ['Suspension 3D', '360° Vision', '60kg Carga'] },
+  { id: '05', name: 'Lucki Bot', type: 'Delivery Estándar', img: '/images/lucki-bot.png', specs: ['4 Bandejas', 'Paso 70cm', 'Interacción IA'] },
+  { id: '06', name: 'Humidifier Bot', type: 'Control Ambiental', img: '/images/delivery-x1.png', specs: ['15L Tanque', 'Atomización', 'Áreas Grandes'] }, // Placeholder img for variant
+  { id: '07', name: 'Service Robot', type: 'Gestión Eventos', img: '/images/greetingbot-max.png', specs: ['Check-in', 'Tickets', 'Voz Natural'] }, // Placeholder img
+  { id: '08', name: 'Coffee Master', type: 'Barista Biónico', img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600', specs: ['Brazo 6-Ejes', '3000h Vida', 'Seguridad Colab.'] } // External placeholder until file provided
 ];
 
 const Catalog: React.FC = () => {
@@ -35,15 +35,20 @@ const Catalog: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/5 border border-white/5">
           {ROBOT_MODELS.map((robot) => (
             <div key={robot.id} className="group bg-[#0a111a] hover:bg-[#121b28] transition-all duration-500 relative flex flex-col h-full overflow-hidden">
-              <div className="relative aspect-square overflow-hidden bg-[#1a2632] border-b border-white/5">
+              <div className="relative aspect-square overflow-hidden bg-[#1a2632] border-b border-white/5 p-6 flex items-center justify-center">
                 <img 
                   src={robot.img} 
                   alt={robot.name} 
-                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                  className="max-h-full max-w-full object-contain filter drop-shadow-xl group-hover:scale-110 transition-all duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a111a]/90 to-transparent"></div>
-                <div className="absolute bottom-4 left-6">
-                  <span className="text-3xl font-black text-[#ff5f00]/30 group-hover:text-[#ff5f00] transition-colors duration-500">{robot.id}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a111a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity delay-100">
+                   <div className="bg-[#ff5f00] p-2 rounded-full shadow-lg shadow-[#ff5f00]/20">
+                     <Cpu size={16} className="text-white" />
+                   </div>
+                </div>
+                <div className="absolute bottom-4 left-6 z-10">
+                  <span className="text-3xl font-black text-slate-700 group-hover:text-[#ff5f00] transition-colors duration-500">{robot.id}</span>
                 </div>
               </div>
 
@@ -64,7 +69,7 @@ const Catalog: React.FC = () => {
                   </ul>
                 </div>
 
-                <button className="w-full py-4 border border-white/10 text-[10px] font-black text-white tracking-[0.2em] uppercase hover:bg-[#ff5f00] hover:border-[#ff5f00] transition-all flex items-center justify-center gap-3">
+                <button className="w-full py-4 border border-white/10 text-[10px] font-black text-white tracking-[0.2em] uppercase hover:bg-[#ff5f00] hover:border-[#ff5f00] transition-all flex items-center justify-center gap-3 group-hover:bg-white/5">
                   Especificaciones <ChevronRight size={14} />
                 </button>
               </div>
