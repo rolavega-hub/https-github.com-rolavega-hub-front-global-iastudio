@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="lg:col-span-5 space-y-8">
-            <div className="p-8 bg-[#121b28] industrial-border rounded-sm">
+            <div className="p-8 bg-[#121b28] border border-[#1e2d3d] rounded-sm">
               <div className="flex items-center gap-3 mb-4">
                 <Cpu size={20} className="text-[#ff5f00]" />
                 <h4 className="text-lg font-black text-white uppercase tracking-tight">Suscripción Técnica</h4>
@@ -64,18 +64,18 @@ const Footer: React.FC = () => {
               </p>
               
               <form action={formAction} ref={formRef} className="space-y-4">
-                <div className="flex gap-3">
+                <div className="flex gap-2">
                   <input
                     type="email"
                     name="email"
                     placeholder="ID_USUARIO@DOMINIO.COM"
                     required
-                    className="flex-1 bg-[#0a111a] border border-[#1e2d3d] px-4 py-4 text-[11px] font-mono text-white focus:outline-none focus:border-[#ff5f00] transition-colors rounded-sm"
+                    className="flex-1 bg-[#0a111a] border border-[#1e2d3d] px-4 py-4 text-[11px] font-mono text-white focus:outline-none focus:border-[#ff5f00] transition-colors"
                   />
                   <button
                     type="submit"
                     disabled={isPending}
-                    className="btn-real-orange px-6 text-white font-black text-[11px] uppercase tracking-widest flex items-center gap-2 rounded-sm disabled:opacity-50 disabled:active:translate-y-0"
+                    className="px-6 bg-[#ff5f00] text-white font-black text-[11px] uppercase tracking-widest hover:bg-[#ff7a22] disabled:opacity-50 transition-all flex items-center gap-2 active:scale-95"
                   >
                     <Send size={14} />
                     {isPending ? 'ENVIANDO...' : 'VINCULAR'}

@@ -26,46 +26,6 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
   }
 
-  /* Efecto Botón Real - Naranja */
-  .btn-real-orange {
-    background: var(--brand-orange);
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.4);
-    border-right: 3px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 12px rgba(255, 95, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.2);
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-real-orange:active {
-    transform: translateY(2px);
-    border-top: 3px solid rgba(0, 0, 0, 0.3);
-    border-left: 3px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4);
-  }
-
-  /* Efecto Botón Real - Gris Industrial */
-  .btn-real-grey {
-    background: var(--brand-navy);
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
-    border-left: 2px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
-    border-right: 3px solid rgba(0, 0, 0, 0.4);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .btn-real-grey:active {
-    transform: translateY(2px);
-    border-top: 3px solid rgba(0, 0, 0, 0.4);
-    border-left: 3px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-
   .tech-grid {
     background-image: radial-gradient(var(--card-border) 1px, transparent 1px);
     background-size: 32px 32px;
@@ -76,6 +36,15 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
   }
+
+  .glow-orange {
+    filter: drop-shadow(0 0 12px var(--brand-orange-glow));
+  }
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
