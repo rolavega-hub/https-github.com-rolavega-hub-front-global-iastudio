@@ -87,9 +87,9 @@ const Hero: React.FC = () => {
                 <Activity size={14} className="animate-pulse" /> {ROBOTS[current].tag}
               </p>
               <div className="relative">
-                <h1 className="text-5xl md:text-6xl xl:text-7xl font-black text-white leading-[1.1] tracking-tighter uppercase break-words">
-                  {ROBOTS[current].name.split(' ')[0]} <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-slate-500 italic font-light">
+                <h1 className="text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tighter uppercase break-words flex flex-col items-start">
+                  <span className="block">{ROBOTS[current].name.split(' ')[0]}</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-slate-500 italic font-light pb-2 pr-4">
                     {ROBOTS[current].name.split(' ').slice(1).join(' ')}
                   </span>
                 </h1>

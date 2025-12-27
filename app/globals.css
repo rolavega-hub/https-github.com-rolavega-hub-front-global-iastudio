@@ -18,6 +18,11 @@
     --primary: var(--brand-orange);
     --primary-foreground: #ffffff;
   }
+  
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
 }
 
 @layer utilities {
@@ -44,7 +49,6 @@
 
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
