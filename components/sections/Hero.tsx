@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Cpu, Activity, Info, BarChart3, Binary, X } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, Cpu, Activity, Info, BarChart3, Binary, X, ExternalLink } from 'lucide-react';
 
 const ROBOTS = [
   {
@@ -53,6 +53,21 @@ const ROBOTS = [
   }
 ];
 
+// Dictionary to map internal keys to display concepts
+const SPEC_LABELS: Record<string, string> = {
+  pantalla: 'INTERFAZ VISUAL',
+  cpu: 'UNIDAD DE PROCESO',
+  voz: 'SISTEMA DE VOZ',
+  mic: 'MATRIZ AUDIO',
+  sensor: 'SENSORES NAV',
+  carga: 'CARGA MÁXIMA',
+  seguridad: 'SISTEMA ACCESO',
+  bateria: 'AUTONOMÍA',
+  bandejas: 'CAPACIDAD',
+  vision: 'VISIÓN COMPUTACIONAL',
+  suspension: 'TIPO CHASIS'
+};
+
 const Hero: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(true);
@@ -101,34 +116,48 @@ const Hero: React.FC = () => {
             </p>
 
             {/* SPECS & CONTROLS */}
-            <div className="p-6 md:p-8 bg-[#121b28] border border-[#1e2d3d] shadow-2xl relative">
-              <div className="grid grid-cols-3 gap-6 mb-8">
+            <div className="p-5 bg-[#121b28] border border-[#1e2d3d] shadow-2xl relative">
+              
+              {/* Specs Buttons - Fixed Grid with Proportional Spacing and Adaptive Font Size */}
+              <div className="grid grid-cols-3 gap-2 mb-5">
                  {Object.entries(ROBOTS[current].specs).map(([key, val]) => (
                    <button 
                     key={key} 
                     onClick={() => setActiveSpec({key, val})}
-                    className="space-y-1 text-left group/spec transition-all"
+                    className="flex flex-col justify-center px-2 py-3 bg-[#0a111a] border border-[#1e2d3d] text-left group/spec transition-all hover:border-[#ff5f00]/50 hover:bg-[#ff5f00]/5 active:scale-[0.98] h-[55px]"
                    >
-                      <p className="mono-label text-[9px] text-slate-500 font-bold uppercase tracking-widest">{key}</p>
-                      <div className="flex items-center gap-2">
-                        <p className="text-white font-black text-xs md:text-sm uppercase group-hover/spec:text-[#ff5f00] whitespace-nowrap">{val}</p>
-                        <Info size={10} className="text-slate-700 group-hover/spec:text-[#ff5f00]" />
+                      <p className="mono-label text-[8px] text-[#ff5f00] font-black uppercase tracking-widest opacity-70 group-hover/spec:opacity-100 mb-0.5 truncate w-full">
+                        {SPEC_LABELS[key] || key}
+                      </p>
+                      <div className="flex items-center justify-between gap-1 w-full">
+                        <p className="text-white font-bold text-[10px] lg:text-[11px] uppercase group-hover/spec:text-slate-200 transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+                          {val}
+                        </p>
+                        <Info size={10} className="text-slate-700 group-hover/spec:text-[#ff5f00] flex-shrink-0" />
                       </div>
                    </button>
                  ))}
               </div>
 
-              <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                <div className="flex gap-2">
-                  <button onClick={handlePrev} className="p-4 bg-[#0a111a] border border-[#1e2d3d] text-white hover:border-[#ff5f00] hover:text-[#ff5f00] transition-all active:scale-95 shadow-inner">
-                    <ChevronLeft size={18} />
+              {/* Controls - Aligned heights and styles */}
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex gap-[-1px]">
+                  <button onClick={handlePrev} className="h-9 w-10 flex items-center justify-center bg-[#0a111a] border border-[#1e2d3d] border-r-0 text-slate-400 hover:text-white hover:bg-[#ff5f00] hover:border-[#ff5f00] transition-all">
+                    <ChevronLeft size={16} />
                   </button>
-                  <button onClick={handleNext} className="p-4 bg-[#0a111a] border border-[#1e2d3d] text-white hover:border-[#ff5f00] hover:text-[#ff5f00] transition-all active:scale-95 shadow-inner">
-                    <ChevronRight size={18} />
+                  <button onClick={handleNext} className="h-9 w-10 flex items-center justify-center bg-[#0a111a] border border-[#1e2d3d] text-slate-400 hover:text-white hover:bg-[#ff5f00] hover:border-[#ff5f00] transition-all">
+                    <ChevronRight size={16} />
                   </button>
                 </div>
-                <a href="#catalogo" className="hidden sm:flex items-center gap-2 text-[10px] font-black text-slate-500 hover:text-white transition-colors tracking-[0.2em] uppercase border-b border-transparent hover:border-[#ff5f00]">
-                  Ficha Técnica <ArrowRight size={12} />
+                
+                {/* External Link to OrionStar */}
+                <a 
+                  href="https://www.orionstar.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex-1 flex items-center justify-center gap-2 h-9 text-[9px] font-black text-slate-400 hover:text-white hover:bg-[#ff5f00] transition-all tracking-[0.1em] uppercase border border-[#1e2d3d] bg-[#0a111a] hover:border-[#ff5f00]"
+                >
+                  Web Oficial OrionStar <ExternalLink size={10} />
                 </a>
               </div>
             </div>
@@ -149,12 +178,6 @@ const Hero: React.FC = () => {
                    {/* Background Glow Effect behind robot */}
                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-gradient-to-b from-white/5 to-transparent blur-3xl rounded-full -z-10"></div>
                    
-                   <div className="absolute top-0 right-0">
-                      <div className="bg-[#ff5f00] text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest shadow-[0_0_15px_rgba(255,95,0,0.4)]">
-                        ORIONSTAR_OFFICIAL
-                      </div>
-                   </div>
-
                    <div className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-6">
                       <div className="space-y-1">
                          <p className="text-[10px] font-mono text-cyan-400 flex items-center gap-2">
@@ -187,7 +210,7 @@ const Hero: React.FC = () => {
               </div>
               <div>
                 <p className="mono-label text-[10px] text-[#ff5f00] font-black tracking-widest mb-1">Análisis Técnico</p>
-                <h3 className="text-3xl font-black text-white uppercase tracking-tight leading-none">{activeSpec.key}</h3>
+                <h3 className="text-3xl font-black text-white uppercase tracking-tight leading-none">{SPEC_LABELS[activeSpec.key] || activeSpec.key}</h3>
               </div>
             </div>
 
